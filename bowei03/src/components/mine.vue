@@ -1,9 +1,7 @@
 <template>
   <div>
     <div id="head">
-      <router-link to="city">
-        <img id="_head" src="../../static/imgs/back.png" alt>
-      </router-link>
+        <img @click="getgo()" id="_head" src="../../static/imgs/back.png" alt>
       <p id="_head_">我的</p>
     </div>
     
@@ -115,6 +113,9 @@ export default {
     this.huoquimg();
   },
   methods: {
+    getgo(){
+            history.go(-1)
+        },
     allu() {
     //   this.newuser = this.$route.query.username3;
     },

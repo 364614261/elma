@@ -1,9 +1,7 @@
 <template>
   <div>
     <header>
-      <router-link to="account">
-        <img src="../../static/imgs/back.png" alt>
-      </router-link>
+        <img @click="gos()" src="../../static/imgs/back.png" alt>
       <span>编辑地址</span>
       <span @click="shanchu()">{{msg}}</span>
     </header>
@@ -43,6 +41,9 @@ export default {
     this.jie();
   },
   methods: {
+    gos(){
+      history.go(-1)
+    },
     back() {
       this.$router.back();
     },

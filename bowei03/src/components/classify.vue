@@ -28,7 +28,6 @@
         
         <div id="saiX" @click="xs_yc()" ><div v-show="xy == false" id="saiX1">筛选</div><div v-show="xy" id="saiX2">筛选</div>
         </div></div>
-        <!-- <router-view></router-view> --> 
         <div v-show="xy" id="sai_x"><ul>
             <li id="sai_1">配送方式</li>
             <li id="sai_2"  ><input :checked="qk" type="checkbox">{{peisong[0].text}}</li>
@@ -278,7 +277,7 @@ overflow: hidden;
 #saiX1{
     border: #e4e4e4 solid 0.01rem;
     width: 1.23rem;
-    height: 0.434rem;
+    height: 0.37rem;
     background-color: #fff;
     border-radius: 0.05rem;
     margin-top: 0.005rem;
@@ -287,7 +286,7 @@ overflow: hidden;
     border: #3190e8 solid 0.01rem;
     background-color: #fff;
     width: 1.23rem;
-    height: 0.42rem;
+    height: 0.37rem;
     border-radius: 0.05rem;
     margin-top: 0.005rem;
 }

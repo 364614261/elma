@@ -70,6 +70,12 @@ export default {
     this.guess();
     this.hots();
     this.getGroupCities();
+    loadingInstance = Loading.service({
+            fullscreen:true,
+            background:"rgba(0, 0, 0, 0.8)",
+            text:"玩命加载中...",
+            spinner:"el-icon-loading",
+        });
   },
   methods: {
     guess() {
@@ -113,6 +119,8 @@ export default {
         }
         // this.groupCities = res.data;
         // var arr = [];
+        // 关闭加载
+                loadingInstance.close();
       });
     }
   }
