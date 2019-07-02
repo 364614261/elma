@@ -37,13 +37,12 @@
               <img id="tp" :src="'https://elm.cangdu.org/img/'+v.image_path" alt="">
             <span id="n_1">{{v.name}}</span>
             <div id="xingXing">
-                 <el-rate                 
-                 v-model="v.rating"
-                 disabled                 
-                 show-score
-                 text-color="#ff9900"
-                 score-template="">
-                 </el-rate></div>
+                 <van-rate v-model="v.rating" 
+                 allow-half
+                 void-icon="star"
+                 void-color="#eee"
+                 size="12"
+                 gutter=""/></div>
                  <span id="fenShu">{{v.rating}}</span>
             <span id="nr_2">{{v.supports[0].icon_name}}</span>
             <span id="nr_3">{{v.supports[1].icon_name}}</span>
@@ -65,7 +64,6 @@
     </div>
 </template>
 <script>
-import { Rate } from 'vant';
 import {mapState} from 'vuex'
 import { Loading } from 'element-ui';
 let loadingInstance
@@ -124,7 +122,6 @@ export default {
                 method:'get'
             }).then(res => {
                 this.arrDi = res.data;
-                // console.log(this.arrDi)
             })
     },
     addImgs(){
@@ -285,8 +282,8 @@ background-color: #fff;
 }
 #fenShu{
       position: absolute;
-      top: 0.55rem;
-      right: 34vw;
+      top: 0.535rem;
+      left: 50vw;
       font-size: 0.12rem;
       color: #666;
 }
