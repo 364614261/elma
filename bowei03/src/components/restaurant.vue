@@ -38,13 +38,13 @@
                   <p id="c">
                       <span>评分</span>
                       <span id="c1">
-                      <el-rate
-                       v-model="foodmsg.rating"
-                       disabled
-                       show-score
-                       text-color="#ff9900"
-                       score-template="">
-                       </el-rate></span>
+                      <van-rate
+                     v-model="foodmsg.rating"
+                     allow-half
+                     void-icon="star"
+                     void-color="#eee"
+                     size='15'
+                     /></span>
                        <span id="c2">{{foodmsg.rating}}</span>
                   </p>
                   <p id="d">
