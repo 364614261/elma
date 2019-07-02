@@ -65,6 +65,7 @@
     </div>
 </template>
 <script>
+import { Rate } from 'vant';
 import {mapState} from 'vuex'
 import { Loading } from 'element-ui';
 let loadingInstance
