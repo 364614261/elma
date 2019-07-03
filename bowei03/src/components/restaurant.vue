@@ -20,7 +20,7 @@
              <div id="img3" @click="ddd()">
                  <img src="../../static/imgs/icon-test.png" alt="">
              </div>
-        </div> 
+        </div>
 
         <div id="foodDetail" v-if="bools == false">
               <div id="other_top">
@@ -127,9 +127,11 @@
                     <span id="prices" v-if="a.specfoods.length">￥{{a.specfoods[0].price}}</span>
                      </div> 
                     <div id="orderFood">
-                    <span @click="a.is_featured--;reduceprice(a.specfoods[0].price);shul--;v.type--" v-if="a.is_featured>0"><i class="el-icon-remove-outline"></i></span>
+                    <span @click="a.is_featured--;reduceprice(a.specfoods[0].price);shul--;v.type--" v-if="a.is_featured>0">
+                        <van-icon name="scan"/></span>
                     <span v-if="a.is_featured>0">{{a.is_featured}}</span>
-                    <span><i  @click="a.is_featured++;addprice(a.specfoods[0].price);shul++;v.type++" class="el-icon-circle-plus-outline"></i></span>
+                    <span><van-icon name="add-o" @click="a.is_featured++;addprice(a.specfoods[0].price);shul++;v.type++" />
+                        </span>
                     </div>
                     </div> 
                        </li>
@@ -181,11 +183,10 @@
                                    
                             <div id="gou_add">
                             <span @click="value.is_featured--;reduceprice(value.specfoods[0].price);shul--;v.type--" v-if="value.is_featured>0">
-                            <i class="el-icon-remove-outline">
-                            </i>
+                            <van-icon name="scan"/>
                             </span>
                             <span v-if="value.is_featured>0">{{value.is_featured}}</span>
-                            <span><i  @click="value.is_featured++;addprice(value.specfoods[0].price);shul++;v.type++" class="el-icon-circle-plus-outline"></i></span>
+                            <span><van-icon  @click="value.is_featured++;addprice(value.specfoods[0].price);shul++;v.type++"  name="add-o"/></span>
                                 </div>                              
                             </li>
                         </ul>
@@ -206,24 +207,24 @@
 
                 <div id="service_score">
                     <span id="att">服务态度</span>
-                    <span><el-rate
-                       v-model="scores.service_score"
-                       disabled
-                       show-score
-                       text-color="#ff9900"
-                       score-template="">
-                       </el-rate></span>               
+                    <span><van-rate
+                     v-model="scores.service_score"
+                     allow-half
+                     void-icon="star"
+                     void-color="#eee"
+                     size='12'
+                     /></span>               
                 <span id="dengJi">{{scores.service_score.toFixed(1)}}</span>
                 </div>
                 <div id="food_score">
                     <span id="att">菜品评价</span>
-                    <span><el-rate
-                       v-model="scores.food_score"
-                       disabled
-                       show-score
-                       text-color="#ff9900"
-                       score-template="">
-                       </el-rate></span>               
+                    <span><van-rate
+                     v-model="scores.food_score"
+                     allow-half
+                     void-icon="star"
+                     void-color="#eee"
+                     size='12'
+                     /></span>               
                 <span id="dengJi2">{{scores.food_score.toFixed(1)}}</span>
                 </div>
                 <p id="songDa">送达时间 {{scores.deliver_time}}分钟</p>
@@ -244,13 +245,13 @@
                     <span id="riQi">{{v.rated_at}}</span>
                     <span id="usernames">{{v.username}}</span>
                     <div id="everyuser_c">                    
-                    <span><el-rate
-                       v-model="scores.food_score"
-                       disabled
-                       show-score
-                       text-color="#ff9900"
-                       score-template="">
-                       </el-rate></span>  
+                    <span><van-rate
+                     v-model="scores.food_score"
+                     allow-half
+                     void-icon="star"
+                     void-color="#eee"
+                     size='12'
+                     /></span>  
                        <span id="songDa2">{{v.time_spent_desc}}</span>
                        </div>
                        <div id="imgs">                         
@@ -269,6 +270,7 @@
     </div>
 </template>
 <script>
+
 import {mapState} from 'vuex'
 import { Loading } from 'element-ui';
 let loadingInstance
@@ -660,9 +662,10 @@ background-color: white;
     float: left;
     width: 75vw;
     overflow: scroll;
-
     overflow-x:hidden;
 }
+
+
 #allDetial{    
     font-size: 0.15rem;	
 	text-align: center;
@@ -698,7 +701,7 @@ background-color: white;
 #details{
     /* border: 2px solid pink; */
     overflow: hidden;
-    /* width: 60vw; */
+    /* width: 55vw; */
 }
 #tuPian{
     overflow: hidden;
@@ -748,9 +751,11 @@ background-color: white;
     padding-right: 0.05rem;
     padding-bottom: 0.1rem;
     font-size: 0.18rem;
+    width: 18vw;
     color: blue;
     z-index: 222;
 }
+
 #shopdetail{
     position: relative;
 }
@@ -1006,7 +1011,7 @@ h1{
 #pingFen_right{
     padding-top: 0.2rem;
     float: right;
-    width: 59vw;
+    width: 50vw;
     text-align: left;
     /* border: 1px solid blue; */
 }
@@ -1023,7 +1028,7 @@ h1{
 #dengJi{    
     padding-bottom: 1rem;
     position: absolute;
-    right: 1vw;
+    right: 10vw;
     top: 0;
 }
 #food_score{
@@ -1034,7 +1039,7 @@ h1{
 #dengJi2{        
     padding-top: 0.1rem;
     position: absolute;
-    right: 0;
+    right: 10vw;
     top: 0;
 }
 #songDa{
