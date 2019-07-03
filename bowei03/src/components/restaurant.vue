@@ -130,10 +130,11 @@
                     <span @click="a.is_featured--;reduceprice(a.specfoods[0].price);shul--;v.type--" v-if="a.is_featured>0">
                         <van-icon name="scan"/></span>
                     <span v-if="a.is_featured>0">{{a.is_featured}}</span>
-                    <span><van-icon name="add-o" @click="a.is_featured++;addprice(a.specfoods[0].price);shul++;v.type++" />
+                    <span><van-icon name="add-o" @click="a.is_featured++;addprice(a.specfoods[0].price);shul++;v.type++;addsc(b,$event)" />
                         </span>
                     </div>
                     </div> 
+                    <div class="ball"></div>
                        </li>
                    </ul>
                    
@@ -435,6 +436,21 @@ export default {
                this.tags = res.data;                                        
             })        
         },
+        // 小球触发
+        addsc(b,evt){
+            var jiahaoObj = document.getElementsByClassName("jiahao");
+            var $ball = document.getElementsByClassName("ball");
+            // document.body.onclick = function(evt) {
+            // console.log(evt.pageX, evt.pageY);
+            $ball[b].style.top = evt.pageY + "px";
+            $ball[b].style.left = evt.pageX + "px";
+            $ball[b].style.transition = "left 0s, top 0s";
+            setTimeout(() => {
+            $ball[b].style.top = window.innerHeight + "px";
+            $ball[b].style.left = "0px";
+            $ball[b].style.transition = "left 1s linear, top 1s ease-in";
+            }, 20);
+        }
         
     },
     computed: {
@@ -1123,4 +1139,17 @@ h1{
     margin-left: 0.3rem;
     margin-top: 0.02rem;    
 }
+/* 小球 */
+.ball {
+width: 12px;
+height: 12px;
+background: blue;
+border-radius: 50%;
+position: fixed;
+transition: left 1s linear, top 1s ease-in;
+z-index: 10;
+left: -1rem;
+top:0;
+}
+
 </style>
