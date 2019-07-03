@@ -169,7 +169,7 @@
                 <div id="gou_top">
                      <span class="che">购物车</span>
                      <div @click="qingKong()">
-                     <span class="delite"><i class="el-icon-delete"></i></span>
+                     <span class="delite"><van-icon name="delete" /></span>
                      <span class="qingkong">清空</span></div>
                 </div>
                   <ul>
@@ -577,10 +577,10 @@ export default {
     padding-top: 0.1rem;
     position: fixed;
     left: 0;
-    top: 1.1rem;
+    top: 1rem;
     width: 100vw;
     z-index: 1;
-    height: 0.25rem;
+    height: 0.28rem;
     margin-bottom: 0.2rem;
     padding-bottom: 0.1rem;
     background-color: white;
