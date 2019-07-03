@@ -20,7 +20,7 @@
              <div id="img3" @click="ddd()">
                  <img src="../../static/imgs/icon-test.png" alt="">
              </div>
-        </div>
+        </div> 
 
         <div id="foodDetail" v-if="bools == false">
               <div id="other_top">
